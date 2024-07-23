@@ -1,0 +1,52 @@
+{
+    "name": "file-analyzer",
+    "version": "1.0.0",
+    "scripts": {
+        "build:frontend": "npm run build --prefix FE",
+        "build:backend": "npm run build --prefix BE",
+        "build": "npm run build:frontend && npm run build:backend",
+        "pkg": "pkg . --out-path dist",
+        "start": "node dist/backend/src/index.js",
+        "copy-frontend": "xcopy /E /I FE\\dist dist\\backend\\frontend",
+        "test": "jest",
+        "install:all": "npm install --legacy-peer-deps && cd FE && npm install --legacy-peer-deps && cd ../BE && npm install --legacy-peer-deps"
+    },
+    "dependencies": {
+        "node-fetch": "^2.6.1",
+        "vue": "^3.4.31"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.24.7",
+        "@babel/preset-env": "^7.24.7",
+        "@babel/preset-typescript": "^7.24.7",
+        "@types/jest": "^29.5.12",
+        "@types/node": "^14.14.31",
+        "babel-jest": "^29.7.0",
+        "jest": "^29.7.0",
+        "ts-jest": "^29.2.1",
+        "typescript": "^4.5.4",
+        "@vue/cli": "^5.0.8",
+        "@vue/cli-plugin-typescript": "^5.0.8",
+        "@vue/cli-service": "^5.0.8",
+        "vue-jest": "^5.0.0-alpha.10",
+        "@vue/test-utils": "^2.0.0-rc.22",
+        "@vue/compiler-sfc": "^3.0.0"
+    },
+    "bin": {
+        "file-analyzer": "dist/backend/src/index.js"
+    },
+    "pkg": {
+        "assets": [
+            "dist/frontend/**/*"
+        ],
+        "scripts": [
+            "dist/backend/src/**/*.js"
+        ],
+        "targets": [
+            "node18-linux-x64",
+            "node18-macos-x64",
+            "node18-win-x64"
+        ],
+        "output": "dist/file-analyzer"
+    }
+}

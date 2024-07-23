@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "esnext",
+        "strict": true,
+        "jsx": "preserve",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "outDir": "../dist/frontend",
+        "lib": [
+            "esnext",
+            "dom"
+        ]
+    },
+    "include": [
+        "**/*.ts",
+        "**/*.vue",
+        "main.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
