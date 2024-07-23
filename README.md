@@ -1,6 +1,6 @@
 
 # Project file-analyzer
-The project is organized into two separate folders: `BE` and `FE`. The `BE` (backend) contains all the application logic to set up the server and read the file to compute the results based on the exercise request. The `FE` (frontend) is a small application based on Vue 3.
+The project is about a bansic web app file reader (count total character) and it organized into two separate folders: `BE` and `FE`. The `BE` (backend) contains all the application logic to set up the server and read the file to compute the results based on the exercise request. The `FE` (frontend) is a small application based on Vue 3.
 The chosen design pattern is the `Strategy Pattern`, as it allows for flexible and interchangeable algorithms for reading files from different sources (local and web).
 The `dist_` folder contains executable files to directly launch the application and you can try it on the browser at `http://localhost:3000`.
 
